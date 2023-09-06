@@ -52,13 +52,8 @@ int main(int argc, char *argv[]) {
         char *word = strtok(buffer, " \t");
         while (word != NULL) {
             size_t len = strlen(word)+1;
-
-            char *key = malloc(len * sizeof(char));
-
-            memcpy(key, word, len);
-
-            long int count = (long int)ht_get(ht, key, len);
-            ht_store(ht, key, len, (void *)count+1);
+            long int count = (long int)ht_get(ht, word, len);
+            ht_store(ht, word, len, (void *)count+1);
             word = strtok(NULL, " \t");
         }
     }
