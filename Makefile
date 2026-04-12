@@ -11,5 +11,11 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+stress: stress.o hashtable.o hash.o
+	$(CC) $(CFLAGS) -o stress stress.o hashtable.o hash.o
+
+valgrind: stress
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./stress
+
 clean:
 	rm -f $(OBJS) $(TARGET)
