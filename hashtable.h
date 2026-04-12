@@ -6,6 +6,8 @@
 #include <assert.h>
 #include "hash.h"
 
+#define MINIMAL_BUCKETS_SIZE_FOR_SHRINKING 10
+
 typedef uint32_t (*hashfunc_t)(const uint8_t*, size_t);
 
 typedef struct {
