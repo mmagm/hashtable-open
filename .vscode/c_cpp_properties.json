@@ -6,12 +6,19 @@
         "${workspaceFolder}/**"
       ],
       "compilerPath": "/usr/bin/gcc",
-      "cStandard": "${default}",
-      "cppStandard": "${default}",
+      "cStandard": "c17",
       "intelliSenseMode": "linux-gcc-x64",
-      "compilerArgs": [
-        ""
-      ]
+      "compilerArgs": ["-Wall", "-Wextra"]
+    },
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+      "cStandard": "c17",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": ["-Wall", "-Wextra"]
     }
   ],
   "version": 4
