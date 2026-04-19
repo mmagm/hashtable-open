@@ -1,2 +1,6 @@
 *.o
 build/*
+examples/*.exe
+examples/wc
+test/*.exe
+test/tests
