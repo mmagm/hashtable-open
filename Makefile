@@ -23,11 +23,5 @@ test/tests.o: test/tests.c hashtable.h
 valgrind: tests
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./test/tests
 
-stress: stress.o hashtable.o hash.o
-	$(CC) $(CFLAGS) -o stress stress.o hashtable.o hash.o
-
-valgrind: stress
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./stress
-
 clean:
 	rm -f *.o $(TARGET) test/*.o test/*.exe examples/*.exe
